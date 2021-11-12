@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Create a category</h1>
+
+<main class="container">
+    <div class="row">
+        <aside class="col-12 col-md-6">
+            <h2>Choose your category</h2>
+            
+            <!-- HTML Produced By the FlaskForm -->
+
+            <form action="" method="POST">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    <fieldset id="category-field">
+                        {{ form.category.label }}
+                        {{ form.category(class = "form-control", placeholder = "New Category") }}
+                    </fieldset>
+                </div>
+
+                    <!-- Submit Button Area -->
+                    {{ form.submit_button(class = "btn btn-primary btn-block") }}
+            </form>
+
+            <div>
+                <a href="{{ url_for('admin.product') }}"><h2>Adding a Product?</h2></a>
+
+            </div>
+
+        </aside>
+        <aside class="col-12 col-md-6" id="side-color">
+
+        </aside>
+    </div>
+</main>
+
+{% endblock content %}

@@ -1,0 +1,54 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+
+<h1>Welcome to the Admin page</h1>
+<h1>{{current_user.first_name}}</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-3 card marginal">
+            <div class="card-header">
+                  Categories
+            </div>
+            <div class="card-body">
+                  <h5 class="card-title">Create new Categories</h5>
+                  <p class="card-text">Build categories to point shoppers to products they really want.</p>
+                  <a href="{{ url_for('admin.category') }}" class="btn btn-primary">Create Category</a>
+            </div>
+        </div>
+        <div class="col-12 col-md-3 card marginal">
+            <div class="card-header">
+                  Products
+            </div>
+            <div class="card-body">
+                  <h5 class="card-title">Create new Products</h5>
+                  <p class="card-text">Got a new item in stock? Lets show it off.</p>
+                  <a href="{{ url_for('admin.product') }}" class="btn btn-primary">Create Product</a>
+            </div>
+        </div>
+        <div class="col-12 col-md-3 card marginal">
+            <div class="card-header">
+                  Orders
+            </div>
+            <div class="card-body">
+                  <h5 class="card-title">See All Orders</h5>
+                  <p class="card-text">Lets see who's been buying and what they've been shopping for.</p>
+                  <a href="{{ url_for('admin.dashboard') }}" class="btn btn-primary">Go to Orders</a>
+            </div>
+        </div>
+        <div class="col-12 col-md-3 card marginal">
+            <div class="card-header">
+                  Customers
+            </div>
+            <div class="card-body">
+                  <h5 class="card-title">See the Customers</h5>
+                  <p class="card-text">You can check out what users you've got already here.</p>
+                  <a href="{{ url_for('admin.dashboard') }}" class="btn btn-primary">Customers</a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- no product form here  -->
+
+{% endblock content %}

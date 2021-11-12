@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header class="hero-section">
+    <h3 class="header-text">Welcome to The shop ! {{ current_user.name }}</h3>
+</header>
+
+<div class="container ">
+    <h2 class="text-align-center">Shop our Products</h2>
+    <div class="row">
+        {% for prod in product %}
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{product_image.query.filter(product_image.product_id == prod.id).first().image_url}}" alt="{{prod.title}}">
+                    <div class="card-body">
+                      <h5 class="card-title">{{prod.title}}</h5>
+                      <p class="card-text">{{prod.description}}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">{{prod.price}}</li>
+
+                    </ul>
+                    <div class="card-body">
+                      <a href="/{{prod.title}}/details" class="card-link">Purchase it</a>
+                      <a href="#" class="card-link">Get Measured</a>
+                    </div>
+                  </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

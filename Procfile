@@ -1,0 +1,1 @@
+web: gunicorn ash_app:app --preload

@@ -1,0 +1,21 @@
+/* form rounding */
+.rounder{
+    border-radius: 37px;
+}
+.navbar-brand img{
+    max-height:50px;
+    height:auto;
+}
+
+.marginal{
+    margin: 1rem;
+}
+#prod_form_img{
+    max-width: 100%;
+    margin-top: 8vh;
+    justify-content: center;
+}
+
+.prod_form >fieldset,div{
+    padding-top: 1rem;
+}
