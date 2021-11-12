@@ -161,7 +161,7 @@ ProductHasTags= db.Table('Product_Has_Tags',
 
 
 class Product(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
+    id = db.Column(db.String, primary_key = True)
     title = db.Column(db.String(150))
     description = db.Column(db.String(2000), nullable = True)
     stock =  db.Column(db.Integer, nullable = False, default = 1)
