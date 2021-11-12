@@ -191,7 +191,7 @@ class Product(db.Model):
 
 
 class Tag(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
+    id = db.Column(db.String, primary_key = True)
     title = db.Column(db.String(30), nullable = False, default = "")
     # product_has_tags = db.relationship('Product', secondary = Product_Has_Tags, backref = 'tagged', lazy = "dynamic")
 
