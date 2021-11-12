@@ -18,7 +18,7 @@ class Config():
     cloud_name = os.environ.get('CLOUD_NAME')
 
     SECRET_KEY = os.environ.get('SECRET_KEY')  or "You will never guess" 
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'app.db')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DEPLOY_DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False # Turn off Update Messages from the sqlalchemy
     CLOUDINARY_URL = "cloudinary://" + api_key + ":" + api_secret + "@" + cloud_name
     UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER')
