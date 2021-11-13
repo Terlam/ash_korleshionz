@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-from ..models import Product, ProductImage
+from ..models import Category, Product, ProductImage
 # from flask_login.utils import login_required
 """
     Note that in the below code, 
@@ -15,9 +15,10 @@ site = Blueprint('site', __name__, template_folder='site_templates')
 
 @site.route('/')
 def home():
-    product = Product.query
+    category = Category
+    prods = Product.query
     product_image = ProductImage
-    return render_template('index.html', product = product, product_image=product_image)
+    return render_template('index.html', category = category,prods = prods, product_image=product_image)
 
 @site.route('/checkout')
 # @login_required
@@ -26,8 +27,9 @@ def cart():
 
 @site.route('/<prod>/details')
 def details(prod):
+    category = Category
     prods = Product.query
     imgs = ProductImage
     product = Product.query.filter(Product.title == prod).first()
     images = ProductImage.query.filter(ProductImage.product_id == product.id).all()
-    return render_template('details.html', product = product, images=images, prods=prods,img=imgs)
+    return render_template('details.html', category = category, product = product, images=images, prods=prods,img=imgs)
